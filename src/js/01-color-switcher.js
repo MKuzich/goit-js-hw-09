@@ -3,6 +3,7 @@ const refs = {
     btnStart: document.querySelector('button[data-start]'),
     btnStop: document.querySelector('button[data-stop]')
 }
+let intervalId = null;
 
 refs.btnStart.addEventListener('click', onStartHandler);
 refs.btnStop.addEventListener('click', onStopHandler);
