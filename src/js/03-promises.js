@@ -9,6 +9,11 @@ function onBtnClickHandler() {
 
   const {elements: {delay, step, amount}} = event.currentTarget;
 
+  if (delay.value < 0 || step.value < 0) {
+    Notify.info('First delay and Delay step cannot be less zero! Please change it!');
+    return;
+  }
+
   for (let i = 1; i <= amount.value; i += 1) {
     const dalayInFunc = Number(delay.value) + (i - 1) * Number(step.value);
     setTimeout(() => {
